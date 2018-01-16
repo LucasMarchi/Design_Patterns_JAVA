@@ -1,0 +1,4 @@
+enum TipoFormato {
+	XML, 
+	PORCENTO
+}
