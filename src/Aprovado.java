@@ -1,9 +1,12 @@
 
 public class Aprovado implements EstadoDeUmOrcamento {
 
+	private boolean descontoAplicado;
+	
 	@Override
 	public void aplicaDescontoExtra(Orcamento orcamento) {
-		orcamento.valor -= orcamento.valor * 0.05;
+		if(!descontoAplicado) orcamento.valor -= orcamento.valor * 0.05;
+		else throw new RuntimeException("Desconto já aplicado!");
 	}
 
 	@Override
